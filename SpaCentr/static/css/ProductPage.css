@@ -1,0 +1,96 @@
+
+.main__conainer{
+}
+
+.main__body {
+    padding: 40px;
+}
+.body__title {
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 35px;
+    padding: 10px 0;
+}
+.body__row {
+    padding: 40px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.body__photo {
+    flex: 0 0 40%;
+}
+.body__photo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+.body__text {
+    flex: 0 0 60%;
+    font-size: 20px;
+    line-height: 25px;
+    padding: 10px;
+}
+.body__buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+.body__button {
+    padding: 10px ;
+    background: rgba(255, 135, 135, 1);
+}
+.button__link {
+    color: white;
+    font-size: 30px;
+    line-height: 35px;
+    padding: 20px;
+}
+.body__price {
+    color: white;
+    font-size: 30px;
+    line-height: 35px;
+    padding: 10px 40px;
+}
+
+
+.main__header{
+    display: flex;
+    justify-content: flex-end;
+}
+.main__info{
+    display: flex;
+    padding: 15px;
+}
+
+.info-main{
+
+}
+.info-main__phone{
+    padding: 0 20px;
+}
+.phone__data{
+    color: white;
+    font-size: 16px;
+
+}
+.phone__link{
+    color: white;
+    font-size: 16px;
+}
+.phone__link:hover{
+    text-decoration: underline;
+}
+
+.info-main__mail{
+    padding: 0 20px;
+}
+.mail__data{
+    color: white;
+    font-size: 16px;
+}
+.mail_link{
+    color: white;
+    font-size: 16px;
+}
+.mail_link:hover{
+    text-decoration: underline;
+}

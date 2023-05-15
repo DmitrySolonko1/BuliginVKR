@@ -1,0 +1,66 @@
+{%extends 'base_layout.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/MainPage.css' %}">
+{% endblock %}
+
+{% block title %}Главная страница{% endblock %}
+
+{% block header %}
+{% include 'SpaApp/header.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="main__conainer _container">
+    <div class="main__header">
+        <div class="main__search">
+            <form method="get" action="">
+                {% if title_contains_query %}
+                <input type="search" autocomplete="off" class="search" value="{{title_contains_query}}" name="title_contains" placeholder="Поиск">
+                {% else %}
+                <input type="search" autocomplete="off" class="search" name="title_contains" placeholder="Поиск">
+                {% endif %}
+            </form>
+        </div>
+        <div class="main__info info-main">
+            <div class="info-main__phone">
+                <div class="phone__data">Тел: <a href="tel:+79570000001" class="phone__link">+7 957 000 00 01</a></div>
+            </div>
+            <div class="info-main__mail">
+                <div class="mail__data">Mail: <a href="mailto:SpaLola116@mail.ru" class="mail_link">SpaLola116@mail.ru</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="main__body">
+        <div class="main__row">
+            {% for service in products_data %}
+            <div class="main__column">
+                <div class="main__item item">
+                    <div class="item__image">
+                        {% if service.photo %}
+                        <img src="{{service.photo.url}}" alt="service_image">
+                        {% else %}
+                        <img src="" alt="NoneImage">
+                        {%endif%}
+                    </div>
+                    <div class="item__border-text">
+                        <div class="item__title">
+                            <a class="title__link" href="{{service.get_absolute_url}}">{{service.title|upper }}</a>
+                        </div>
+                        <div class="item__body">
+                            <div class="item__marketplace">
+                                <a href="{{service.get_absolute_url}}" class="marketpalce__link">Подробнее</a>
+                            </div>
+                            <div class="item__type">
+                                <a href="#" class="type__link">В корзину</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+    </div>
+</div>
+{% endblock %}

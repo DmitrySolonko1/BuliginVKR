@@ -1,0 +1,94 @@
+.addProduct__conainer{
+    margin: 0px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.addProduct__title{
+
+}
+.addProduct__title h2{
+    font-weight: 600;
+    font-size: 40px;
+    padding: 25px 20px;
+}
+.addProduct__form{
+    padding:10px 20px 25px 20px;
+}
+.form__data{
+    padding: 5px 0;
+}
+.form__label{
+    padding: 7px 0;
+}
+.label__form{
+    font-size: 18px;
+}
+.form__form{
+
+}
+.form__form input[type=text] {
+    background: #666C8A;
+    height: 27px;
+    min-width: 300px;
+    padding: 10px;
+    color: white;
+}
+@media (max-width: 450px){
+    .form__form input[type=text] {
+        min-width: 200px;
+    }
+}
+.form__form textarea{
+    background: #666C8A;
+    min-width: 500px;
+    padding: 10px;
+    color: white;
+}
+
+@media (max-width: 550px){
+    .form__form textarea {
+        min-width: auto;
+    }
+}
+
+.form__form input[type=file] {
+    padding: 5px 0;
+}
+
+.form__form select{
+    background-image:none;
+    padding: 5px;
+    -webkit-appearance: none;
+    background: url("/static/image/arrow-204-16.ico") no-repeat;
+    background-position: right 3px top 7px;
+    background-color: #666C8A;
+    height: 27px;
+    min-width: 300px;
+    color: white;
+}
+
+.form__form input[type=number]{
+    background: #666C8A;
+    height: 27px;
+    min-width: 300px;
+    padding: 10px;
+    color: white;
+}
+.addProduct__button{
+    display: flex;
+    justify-content: flex-start;
+    margin: 20px 0px;
+}
+.button__form{
+    padding: 7px;
+    color: black;
+    background: #6B3AB0;
+    border-radius: 7px;
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    min-width: 100px;
+}

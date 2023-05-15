@@ -1,0 +1,49 @@
+{%extends 'base_layout.html' %}
+{% load static %}
+{% load humanize %}
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/ProductPage.css' %}">
+{% endblock %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+<div class="main__conainer _container">
+    <div class="main__header">
+        <div class="main__info info-main">
+            <div class="info-main__phone">
+                <div class="phone__data">Тел: <a href="tel:+79570000001" class="phone__link">+7 957 000 00 01</a></div>
+            </div>
+            <div class="info-main__mail">
+                <div class="mail__data">Mail: <a href="mailto:SpaLola116@mail.ru" class="mail_link">SpaLola116@mail.ru</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="main__body">
+        <div class="body__title">{{service.title}}</div>
+        <div class="body__row">
+            <div class="body__photo">
+                <img src="{{service.photo.url}}" alt="service_image">
+            </div>
+            <div class="body__text">
+                {{service.description}}
+            </div>
+        </div>
+        <div class="body__buttons">
+            <div class="body__button">
+                <a href="" class="button__link">Записаться</a>
+            </div>
+            <div class="body__price">
+                {{service.price|floatformat:0|intcomma}} руб/час
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+{% endblock %}
+
+{% block header %}
+{% include 'SpaApp/header.html' %}
+{% endblock %}

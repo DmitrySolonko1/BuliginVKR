@@ -1,0 +1,43 @@
+{%extends 'base_layout.html' %}
+{% load static %}
+
+{% block styles %}
+
+
+<link rel="stylesheet" href="{% static 'css/contacts.css' %}">
+{% endblock %}
+
+{% block title %}Цены{% endblock %}
+
+{% block header %}
+{% include 'SpaApp/header.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="main__conainer _container">
+    <div class="main__header">
+        <div class="main__info info-main">
+            <div class="info-main__phone">
+                <div class="phone__data">Тел: <a href="tel:+79570000001" class="phone__link">+7 957 000 00 01</a></div>
+            </div>
+            <div class="info-main__mail">
+                <div class="mail__data">Mail: <a href="mailto:SpaLola116@mail.ru"
+                                                 class="mail_link">SpaLola116@mail.ru</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="main__body contacts">
+        <div class="contact__info">
+            <div class="info__phone">Тел: <a href="tel:+79570000001" class="phone__link">+7 957 000 00 01</a></div>
+            <div class="info__mail">Mail: <a href="mailto:SpaLola116@mail.ru" class="mail_link">SpaLola116@mail.ru</a>
+            </div>
+            <div class="info__vk">ВК:</div>
+            <div class="info__tg">Телеграмм:</div>
+            <div class="info__address">Адрес:</div>
+        </div>
+        <div class="contact__photo">
+            <img src="{% static 'image/qr.png' %}" alt="">
+        </div>
+    </div>
+</div>
+{% endblock %}

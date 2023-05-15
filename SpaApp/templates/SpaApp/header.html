@@ -1,0 +1,112 @@
+{% load static %}
+<header class="header">
+    <div class="header__container">
+
+        <div class="header__body">
+            <div class="header__burger">
+                <span></span>
+            </div>
+            <div class="header__logo">
+                <a href="/" class="title__logo">Спа центр</a>
+                <a href="/"><img src="{% static 'image/Lola.svg' %}" alt="Logo"></a>
+                <a href="/" class="title__logo">Lola</a>
+
+            </div>
+            <div class="header__profile profile">
+                {% if user.is_authenticated %}
+                <div class="profile__photo">
+                    <img src="{% static 'image/Avatar.svg' %}" alt="profile avatar">
+                </div>
+                <div class="profile__name">
+                    <a href="" class="profile__link">{{user.name}} 173 бон.</a>
+                </div>
+                <div class="profile__items">
+                    <a href="" class="profile__link">Корзина</a>
+                </div>
+                <div class="profile__items">
+                    <a href="" class="profile__link">Мои записи</a>
+                </div>
+                <div class="profile__items">
+                    <a href="" class="profile__link">История записей</a>
+                </div>
+                {% else %}
+                <div class="profile__photo">
+                    <img src="{% static 'image/logout_image.png' %}" alt="profile avatar">
+                </div>
+                <div class="profile__items">
+                    <a href="{%url 'login'%}" class="profile__link">Войти</a>
+                </div>
+                <div class="profile__items">
+                    <a href="{%url 'registrations'%}" class="profile__link">Зарегистрироваться</a>
+                </div>
+                {% endif %}
+            </div>
+
+
+            <div class="header__menu menu">
+                <ul class="menu__list">
+                    <li class="menu__item">
+                        <div class="menu__icon">
+                            <img src="{% static 'image/Menu.svg' %}" alt="menu">
+                        </div>
+                        <a href="/" class="menu__link">Каталог</a>
+                    </li>
+                    <li class="menu__item">
+                        <div class="menu__icon">
+                            <img src="{% static 'image/Arrow.svg' %}" alt="menu">
+                        </div>
+                        <a href="{% url 'price' %}" class="menu__link">Цены</a>
+                    </li>
+                    <li class="menu__item">
+                        <div class="menu__icon">
+                            <img src="{% static 'image/Arrow.svg' %}" alt="menu">
+                        </div>
+                        <a href="" class="menu__link">Поддержка</a>
+                    </li>
+                    <li class="menu__item">
+                        <div class="menu__icon">
+                            <img src="{% static 'image/Balance.svg' %}" alt="menu">
+                        </div>
+                        <a href="" class="menu__link">Отзывы</a>
+                    </li>
+                    <li class="menu__item">
+                        <div class="menu__icon">
+                            <img src="{% static 'image/Support.svg' %}" alt="menu">
+                        </div>
+                        <a href="{% url 'master_page' %}" class="menu__link">Мастера</a>
+                    </li>
+                    <li class="menu__item">
+                        <div class="menu__icon">
+                            <img src="{% static 'image/Garantees.svg' %}" alt="menu">
+                        </div>
+                        <a href="{%url 'contacts_page'%}" class="menu__link">Контакты</a>
+                    </li>
+                    {% if user.is_authenticated %}
+                    <li class="menu__item logout_item">
+                        <div class="menu__icon">
+                            <img src="{% static 'image/Logout.svg' %}" alt="menu">
+                        </div>
+                        <a href="{% url 'logout' %}" class="menu__link logout_buuton">Выйти</a>
+                    </li>
+                    {% else %}
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div class="modal__text">
+            <p>Извините, у вас нет доступа к данной странице</p>
+            <p>Прежде чем что-то продать, нужно авторизироваться</p>
+        </div>
+
+        <span class="close">&times;</span>
+    </div>
+
+
+</div>

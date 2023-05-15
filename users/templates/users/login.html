@@ -1,0 +1,34 @@
+{%extends 'base_layout.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+{% block title %}Авторизация{% endblock %}
+
+{% block header %}
+{% include 'SpaApp/header.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="authorization__conainer _container">
+    <div class="authorization__title"><h2>Авторизация</h2></div>
+    <div class="authorization__form">
+        <form method="post">
+            {% csrf_token %}
+            {% for f in form %}
+            <div class="form__data">
+                <div class="form__label">
+                    <label class="label__form" for="{{f.id_for_label}}">{{f.label}}:</label>
+                </div>
+                <div class="form__form">{{f}}</div>
+            </div>
+            {% endfor %}
+            <div class="authorization__button">
+                <button class="button__form" type="submit">Войти</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

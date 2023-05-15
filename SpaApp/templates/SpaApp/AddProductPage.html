@@ -1,0 +1,34 @@
+{%extends 'base_layout.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/add_product.css' %}">
+{% endblock %}
+
+{% block title %}Добавление продукта{% endblock %}
+
+{% block header %}
+{% include 'GGsApp/header.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="addProduct__conainer _container">
+    <div class="addProduct__title"><h2>Добавление товара</h2></div>
+    <div class="addProduct__form">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% for f in form %}
+            <div class="form__data">
+                <div class="form__label">
+                    <label class="label__form" for="{{f.id_for_label}}">{{f.label}}:</label>
+                </div>
+                <div class="form__form">{{f}}</div>
+            </div>
+            {% endfor %}
+            <div class="addProduct__button">
+                <button class="button__form" type="submit">Добавить</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

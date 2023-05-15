@@ -1,0 +1,55 @@
+{%extends 'base_layout.html' %}
+{% load static %}
+
+{% block styles %}
+
+
+<link rel="stylesheet" href="{% static 'css/masterspage.css' %}">
+{% endblock %}
+
+{% block title %}Цены{% endblock %}
+
+{% block header %}
+{% include 'SpaApp/header.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="main__conainer _container">
+    <div class="main__header">
+        <div class="main__info info-main">
+            <div class="info-main__phone">
+                <div class="phone__data">Тел: <a href="tel:+79570000001" class="phone__link">+7 957 000 00 01</a></div>
+            </div>
+            <div class="info-main__mail">
+                <div class="mail__data">Mail: <a href="mailto:SpaLola116@mail.ru"
+                                                 class="mail_link">SpaLola116@mail.ru</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="main__body">
+        <div class="body__row">
+            {% for master in masters %}
+            <div class="body__column">
+                <div class="body__item item-main">
+                    <div class="item-main__photo">
+                        {% if master.photo %}
+                        <img src="{{master.photo.url}}" alt="master_photo">
+                        {% else %}
+                        <img src="" alt="NoneImage">
+                        {%endif%}
+                    </div>
+                    <div class="item-main__services">
+                        {% for service in master.services.all %}
+                        {{ service.title|upper}}
+                        {% endfor %}
+                    </div>
+                    <div class="item-main__fio">
+                        {{master.FIO}}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
