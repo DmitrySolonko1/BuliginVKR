@@ -38,3 +38,29 @@ class Services(models.Model):
     def save(self, *args, **kwargs):
         self.title = self.title.lower()
         super(Services, self).save(*args, **kwargs)
+
+
+class TimeSlot(models.Model):
+    time = models.DateTimeField(verbose_name='Дата и время бронирования')
+    is_available = models.BooleanField(default=True, verbose_name='Статус')
+
+    def __str__(self):
+        return str(self.time)
+
+    class Meta:
+        verbose_name = 'Время бронирования'
+        verbose_name_plural = 'Время бронирования'
+
+
+class Booking(models.Model):
+    service = models.ForeignKey(Services, on_delete=models.CASCADE, verbose_name='Услуга для бронирования')
+    time_slot = models.ForeignKey(TimeSlot, on_delete=models.CASCADE, verbose_name='Время бронирования')
+    client_name = models.CharField(max_length=255, verbose_name='Клиент')
+    masters = models.ForeignKey(Masters, on_delete=models.CASCADE, verbose_name='Мастер')
+
+    def __str__(self):
+        return self.client_name
+
+    class Meta:
+        verbose_name = 'Бронь'
+        verbose_name_plural = 'Бронь'

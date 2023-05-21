@@ -1,0 +1,93 @@
+.booking__container{
+}
+.booking__body{
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+}
+.booking__title{
+    font-size: 35px;
+    line-height: 40px;
+    padding: 10px;
+    color: white;
+    font-weight: 600;
+}
+.booking__form{
+
+
+}
+form{
+padding: 20px;
+
+
+}
+.form{
+    display: flex;
+    flex-direction: column;
+}
+.booking__button{
+    max-width: 120px;
+    padding: 10px 5px;
+    margin: 10px 0;
+    background: rgba(255, 135, 135, 1);
+}
+
+select#id_master {
+}
+label{
+}
+
+
+.main__header{
+    display: flex;
+    justify-content: flex-end;
+}
+.main__info{
+    display: flex;
+    padding: 15px;
+}
+
+.info-main{
+
+}
+.info-main__phone{
+    padding: 0 20px;
+}
+.phone__data{
+    color: white;
+    font-size: 16px;
+
+}
+.phone__link{
+    color: white;
+    font-size: 16px;
+}
+.phone__link:hover{
+    text-decoration: underline;
+}
+
+.info-main__mail{
+    padding: 0 20px;
+}
+.mail__data{
+    color: white;
+    font-size: 16px;
+}
+.mail_link{
+    color: white;
+    font-size: 16px;
+}
+.mail_link:hover{
+    text-decoration: underline;
+}
+
+.confirmation__title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px;
+    font-size: 40px;
+
+
+}

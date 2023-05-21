@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.humanize',
+    'bootstrap_datepicker_plus',
     'django.contrib.staticfiles',
     'users.apps.UsersConfig',
     'SpaApp.apps.SpaappConfig',

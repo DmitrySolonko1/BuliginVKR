@@ -38,7 +38,16 @@
     padding: 10px ;
     background: rgba(255, 135, 135, 1);
 }
-.button__link {
+.body__button.disabled{
+    background: gray;
+}
+.button__link{
+    color: white;
+    font-size: 30px;
+    line-height: 35px;
+    padding: 20px;
+}
+a.button__link.disabled{
     color: white;
     font-size: 30px;
     line-height: 35px;

@@ -30,9 +30,15 @@
             </div>
         </div>
         <div class="body__buttons">
+            {% if user.is_authenticated %}
             <div class="body__button">
-                <a href="" class="button__link">Записаться</a>
+                <a href="{% url 'book_service' pk=object.pk%}" class="button__link">Записаться</a>
             </div>
+            {% else %}
+            <div class="body__button disabled">
+                <a href="" class="button__link disabled">Записаться</a>
+            </div>
+            {% endif %}
             <div class="body__price">
                 {{service.price|floatformat:0|intcomma}} руб/час
             </div>

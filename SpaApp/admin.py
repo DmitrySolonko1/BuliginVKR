@@ -17,5 +17,11 @@ class MastersAdmin(admin.ModelAdmin):
 
     get_services.short_description = 'Услуги'
 
+class BookingAdmin(admin.ModelAdmin):
+    list_display = ['service', 'time_slot', 'client_name', 'masters']
+    list_display_links = ['service', 'time_slot', 'client_name', 'masters']
+
+
 admin.site.register(Masters, MastersAdmin)
+admin.site.register(Booking, BookingAdmin)
 admin.site.register(Services, ServiceAdmin)
